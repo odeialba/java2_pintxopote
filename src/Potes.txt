@@ -1,0 +1,6 @@
+01;agua;1
+02;caña;2
+03;zurito;1
+04;crianza;2
+05;vinodelaño;1
+06;refresco;2

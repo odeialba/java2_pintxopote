@@ -1,0 +1,5 @@
+0;b7;gros
+1;tirol;gros
+2;onddi;centro
+3;aralar;amara
+4;kellys;centro

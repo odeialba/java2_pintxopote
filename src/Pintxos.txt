@@ -1,0 +1,6 @@
+01;pato;pato,muslo;2
+02;tortilla;tortilla,patata,cebolla;1
+03;foie;pato,foie;2
+04;croqueta;pan,jamon,masa;1
+05;ensaladilla;mayonesa,huevo,patata,aceituna,atun;2
+06;txaka;mayonesa,txaka;1
