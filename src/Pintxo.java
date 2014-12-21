@@ -9,8 +9,8 @@ public class Pintxo {
 	//1: Tortilla patata, ...
 	//2: Foie,...
 	//metodos getter/setter
-	public void setId (int id){
-		id = id;
+	public void setId (int ide){
+		id = ide;
 	}
 	public int getId(){
 		return id;
