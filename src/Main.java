@@ -49,8 +49,7 @@ public class Main {
 								System.out.println("Tipo: Básico");
 							} else if (apintxo.get(i).getTipo() == 2) {
 								System.out.println("Tipo: Selecto");
-							} 
-							
+							}
 						}
 					} catch(IOException ioe) {
 						System.out.println("Error: " + ioe);
@@ -58,7 +57,40 @@ public class Main {
 					break;
 				}
 				case 2: { //2) Ver los POTES disponibles.
-					
+					try {
+						File txt = new File("./Potes.txt");
+						FileReader fr = new FileReader(txt);
+						BufferedReader br = new BufferedReader(fr);
+						String linea = br.readLine();
+						
+						ArrayList<Pote> apote = new ArrayList<Pote>();
+						String [] parpot1;
+						//String [] parpot2;
+						while (linea != null) {
+							parpot1 = linea.split(";");
+							Pote pote = new Pote();
+							pote.setId(Integer.parseInt(parpot1[0]));
+							pote.setNombre(parpot1[1]);
+							pote.setTipo(Integer.parseInt(parpot1[2]));
+							apote.add(pote);
+							linea = br.readLine();
+						} 
+						//break;
+						
+						for (int i = 0; i < apote.size(); i++) {
+							System.out.println("\n---POTE " + (i+1) + "---");
+							System.out.println("ID: " + apote.get(i).getId());
+							System.out.println("Nombre: " + apote.get(i).getNombre());
+							if (apote.get(i).getTipo() == 1){
+								System.out.println("Tipo: Básico");
+							} else if (apote.get(i).getTipo() == 2) {
+								System.out.println("Tipo: Selecto");
+							}
+						}
+					} catch(IOException ioe) {
+						System.out.println("Error: " + ioe);
+					}
+					break;
 				}
 				case 3: { //3) Ver los BARES disponibles.
 					

@@ -5,8 +5,8 @@ public class Pote {
 
 	//1: Agua, zurito, vino del año
 	//2: Caña, refrescos, vino crianza
-	public void setId (int id){
-		id = id;
+	public void setId (int ide){
+		id = ide;
 	}
 	public int getId(){
 		return id;
