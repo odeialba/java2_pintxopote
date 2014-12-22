@@ -24,31 +24,27 @@ public class Main {
 						ArrayList<Pintxo> apintxo = new ArrayList<Pintxo>();
 						String [] parpin1;
 						String [] parpin2;
-						//String [] partpin3;
 						while (linea != null) {
-						//for (int a = 0; a < 5; a++) {
 							parpin1 = linea.split(";");
 							Pintxo pintxo = new Pintxo();
 							pintxo.setId(Integer.parseInt(parpin1[0]));
 							pintxo.setNombre(parpin1[1]);
-							
-							//String ingre = 
 							parpin2 = parpin1[2].split(",");
 							pintxo.setIngredientes(parpin2);
 							pintxo.setTipo(Integer.parseInt(parpin1[3]));
 							apintxo.add(pintxo);
 							linea = br.readLine();
-							
 						} 
 						//break;
 						
 						for (int i = 0; i < apintxo.size(); i++) {
-							System.out.println("\n---PINTXO---");
+							System.out.println("\n---PINTXO " + (i+1) + "---");
 							System.out.println("ID: " + apintxo.get(i).getId());
 							System.out.println("Nombre: " + apintxo.get(i).getNombre());
-							/*for (int ing = 0; i < apintxo.get(i).getIngredientes().length; ing++){
-								System.out.println(apintxo.get(i).getIngredientes()[ing]);
-							}*/
+							System.out.println("Ingredientes: ");
+							for (int ing = 0; ing < apintxo.get(i).getIngredientes().length; ing++){
+								System.out.println("  " + (ing+1) + "- " + apintxo.get(i).getIngredientes()[ing]);
+							}
 							if (apintxo.get(i).getTipo() == 1){
 								System.out.println("Tipo: Básico");
 							} else if (apintxo.get(i).getTipo() == 2) {
