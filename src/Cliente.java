@@ -1,7 +1,7 @@
 public class Cliente {
 
-	private int Id;
-	private String Nombre; //Guardar Nombre Apellidos
+	private int id;
+	private String nombre; //Guardar Nombre Apellidos
 	private Cartilla cartilla;
 
 	public void setId (int id){

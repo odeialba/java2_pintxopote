@@ -1,14 +1,14 @@
 import java.util.*;
 
 public class Bar {
-	private int Id;
-	private String Nombre;
-	private String Direccion;
+	private int id;
+	private String nombre;
+	private String direccion;
 	private ArrayList<Pintxo> pintxos;
 	private ArrayList<Pote> potes;
 
-	public void setId (int id){
-		id = id;
+	public void setId (int ide){
+		id = ide;
 	}
 	public int getId(){
 		return id;

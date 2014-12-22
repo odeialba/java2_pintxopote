@@ -35,7 +35,6 @@ public class Main {
 							apintxo.add(pintxo);
 							linea = br.readLine();
 						} 
-						//break;
 						
 						for (int i = 0; i < apintxo.size(); i++) {
 							System.out.println("\n---PINTXO " + (i+1) + "---");
@@ -64,18 +63,16 @@ public class Main {
 						String linea = br.readLine();
 						
 						ArrayList<Pote> apote = new ArrayList<Pote>();
-						String [] parpot1;
-						//String [] parpot2;
+						String [] parpot;
 						while (linea != null) {
-							parpot1 = linea.split(";");
+							parpot = linea.split(";");
 							Pote pote = new Pote();
-							pote.setId(Integer.parseInt(parpot1[0]));
-							pote.setNombre(parpot1[1]);
-							pote.setTipo(Integer.parseInt(parpot1[2]));
+							pote.setId(Integer.parseInt(parpot[0]));
+							pote.setNombre(parpot[1]);
+							pote.setTipo(Integer.parseInt(parpot[2]));
 							apote.add(pote);
 							linea = br.readLine();
 						} 
-						//break;
 						
 						for (int i = 0; i < apote.size(); i++) {
 							System.out.println("\n---POTE " + (i+1) + "---");
@@ -93,13 +90,39 @@ public class Main {
 					break;
 				}
 				case 3: { //3) Ver los BARES disponibles.
-					
+					try {
+						File txt = new File("./Bares.txt");
+						FileReader fr = new FileReader(txt);
+						BufferedReader br = new BufferedReader(fr);
+						String linea = br.readLine();
+						
+						ArrayList<Bar> abar = new ArrayList<Bar>();
+						String [] parbar;
+						while (linea != null) {
+							parbar = linea.split(";");
+							Bar bar = new Bar();
+							bar.setId(Integer.parseInt(parbar[0]));
+							bar.setNombre(parbar[1]);
+							bar.setDireccion(parbar[2]);
+							abar.add(bar);
+							linea = br.readLine();
+						} 
+						
+						for (int i = 0; i < abar.size(); i++) {
+							System.out.println("\n---BAR " + (i+1) + "---");
+							System.out.println("ID: " + abar.get(i).getId());
+							System.out.println("Nombre: " + abar.get(i).getNombre());
+							System.out.println("Dirección: " + abar.get(i).getDireccion());
+						}
+					} catch(IOException ioe) {
+						System.out.println("Error: " + ioe);
+					}
 				}
 				case 0: { //0) Salir
 					break;
 				}
 				default: { //Si la opción es erronea
-					
+					System.out.println("¡El número introducido no es válido!");
 				}
 			}
 		} while(accion != 0);
